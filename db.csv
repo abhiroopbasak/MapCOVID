@@ -1,0 +1,101 @@
+_id,name,email,password,covid,vaccine,picture
+60647a58fec8352078a3bf6e,Abhiroop Basak,abhiroop1.bas@gmail.com,abhiroop,Negative,No,media/profile_Abhiroop Basak.png
+60647acdfec8352078a3bf70,Abhiroop Basak,abhiroop1.bas@gmail.com,abhiroop,Negative,No,media/profile_Abhiroop Basak.png
+60647b80791f602ebd956367,Abhiroop,AbhiroopSucks@gmail.com,AbhiroopSucks,Positive,No,profile_sample.png
+60647bd8791f602ebd956369,Basak,Basaksarees@gmail.com,2441139,Positive,Yes,profile_sample.png
+60647c2c791f602ebd95636b,Sonu,SonuNigam@gmail.com,sonuNigaM,Negative,Yes,profile_sample.png
+606489464af185ca7294d0d7,Pamela,Pamela@yahoo.in,Pammy,Negative,No,profile_sample.png
+606489704af185ca7294d0d9,Monu,Monu@rediffmail.com,oppo,Positive,No,profile_sample.png
+606489a24af185ca7294d0db,Tatiana,tati_ANA@gmail.com,anatiana,Negative,No,profile_sample.png
+606489cf4af185ca7294d0dd,Lizzie,Lizzie@gmail.com,eight,Negative,Yes,profile_sample.png
+606489e94af185ca7294d0df,Nina,Nina@yahoo.com,nina,Not Tested,No,profile_sample.png
+60648a094af185ca7294d0e1,Yasmine,Yasmine@yahoo.com,yassy,Not Tested,No,profile_sample.png
+60648a244af185ca7294d0e4,Soumyadeep Pal,palsoumyadeep87@gmail.com,harry potter,Negative,No,profile_sample.png
+60648ab74af185ca7294d0e6,Taylor,Swift@yahoo.in,taytay,Positive,Yes,profile_sample.png
+60648ad24af185ca7294d0e8,Joe Alywn,Alywn@gmail.com,taylor,Negative,Yes,profile_sample.png
+60648aeb4af185ca7294d0ea,Betty,Elizabeth@yahoo.in,taylorswift,Not Tested,No,profile_sample.png
+60648b074af185ca7294d0ec,Marjorie,Marjorie@gmail.com,may,Negative,Yes,profile_sample.png
+60648b784af185ca7294d0ee,Goldie,Gold@gmail.in,goldie,Negative,No,profile_sample.png
+60648ba84af185ca7294d0f0,Raymond Holt,Holt_Captain@yahoo.com,kevin,Negative,Yes,profile_sample.png
+60648bcd4af185ca7294d0f2,Kevin,Kevin_PHD@rediffmail.com,holt,Positive,Yes,profile_sample.png
+60648c1c4af185ca7294d0f4,Amy Santiago,Santiago_Amy@gmail.com,Jacob,Negative,Yes,profile_sample.png
+60648c384af185ca7294d0f6,Jacob Peralta,Peralta_rocks@yahoo.com,Amy,Not Tested,No,profile_sample.png
+60648c574af185ca7294d0f8,Charles Boyle,Boyle@gmail.com,gen,Negative,No,profile_sample.png
+60648c724af185ca7294d0fa,Nikolaj Boyle,Niko@yahoo.in,dad,Not Tested,No,profile_sample.png
+60648d024af185ca7294d0fc,Lola,Delores@gmail.com,lolapretty,Negative,Yes,profile_sample.png
+60648d244af185ca7294d0fe,Inej Kafka,Inej@yahoo.in,inej,Not Tested,No,profile_sample.png
+60648d414af185ca7294d100,Kaz Brekker,Kaz@grisha.com,grisha,Negative,No,profile_sample.png
+60648d8d4af185ca7294d102,Diana Spencer,Princess@yahoo.in,princess,Negative,Yes,profile_sample.png
+60648da44af185ca7294d104,Elizabeth,Queen@gmail.com,queen,Positive,Yes,profile_sample.png
+60648dcd4af185ca7294d106,Sara,sar_a@gmail.com,saraaaaaa,Not Tested,No,profile_sample.png
+60648df64af185ca7294d108,Veronica Lodge,Ver_onica@gmail.com,betty,Positive,No,profile_sample.png
+60648e184af185ca7294d10a,Elizabeth Cooper,Cooper@yahoo.in,cooper,Negative,Yes,profile_sample.png
+60648e3a4af185ca7294d10c,Polly Cooper,polly@rediffmail.com,polly,Not Tested,No,profile_sample.png
+60648e594af185ca7294d10e,Alice Cooper,Alice_Smith@gmail.com,smith,Negative,Yes,profile_sample.png
+60648edd4af185ca7294d110,Jughead Jones,Jones@yahoo.com,betty,Not Tested,Yes,profile_sample.png
+60648efb4af185ca7294d112,Archibald Andrews,Archie69@gmail.com,69,Not Tested,Yes,profile_sample.png
+60648f164af185ca7294d114,Fred Andrews,Freddie@yahoo.in,fred121,Negative,No,profile_sample.png
+60648f524af185ca7294d116,Forsythe Peddleton Jones,FP_jones@yahoo.com,alice,Not Tested,Yes,profile_sample.png
+60648f934af185ca7294d118,Jellybean Jones,JJ@yahoo.com,ricky,Not Tested,No,profile_sample.png
+606490224af185ca7294d11a,Penelope Blossom,pb_69@gmail.com,,Positive,No,profile_sample.png
+6064904e4af185ca7294d11c,Cheryl Blossom,cherry@maple.com,cherry,Not Tested,Yes,profile_sample.png
+606490824af185ca7294d11e,Antoinette Topaz,Topaz_41@gmail.com,41,Negative,No,profile_sample.png
+606490a34af185ca7294d120,Aria Montgomery,aria@pll.com,42,Not Tested,Yes,profile_sample.png
+606490c44af185ca7294d122,Spencer Hastings,Sh_43@yahoo.in,43,Not Tested,Yes,profile_sample.png
+606490de4af185ca7294d124,Emily Khan,Khan@yahoo.com,44,Positive,Yes,profile_sample.png
+6064911f4af185ca7294d126,Anne Hathway,Anne@rediffmail.com,45,Negative,Yes,profile_sample.png
+606491414af185ca7294d128,Olive Flores,Olive@dunhill.com,46,Positive,No,profile_sample.png
+606491634af185ca7294d12a,Fiona Shrek,Fiona@rediffmail.com,47,Positive,No,profile_sample.png
+606491854af185ca7294d12c,Alexandra Daddario,alex@dunhill.com,48,Negative,No,profile_sample.png
+606491ab4af185ca7294d12e,Lolita Vladmir,Vladmir@dunhill.com,49,Not Tested,Yes,profile_sample.png
+606492094af185ca7294d130,Colin Cloud,magic@dunhill.com,50,Negative,No,profile_sample.png
+6064a481ca5c6c2dbce3d41e,Manoswita Chatterjee,chatterjeemanoswita0@gmail.com,manoswita,Not Tested,No,profile_sample.png
+6064a7e0ca5c6c2dbce3d420,qwrr,qwrrfbgh@gmail.com,qwerty,Positive,Yes,profile_sample.png
+6064a804ca5c6c2dbce3d422,asdf,asdf@gmail.com,asdfghjkl,Negative,Yes,profile_sample.png
+6064a854ca5c6c2dbce3d424,zxc,zxc@gmail.com,zxcvbnmjhgtrew852,Not Tested,Yes,profile_sample.png
+6064a88cca5c6c2dbce3d426,mkolp,mkolp@gmail.com,785412369,Negative,No,profile_sample.png
+6064a8a6ca5c6c2dbce3d428,llllll,llll.8541gthm@gmail.com,12j@1245,Positive,No,profile_sample.png
+6064a8bcca5c6c2dbce3d42a,poiuyt,poiuyt@gmail.com,qwertyuiuhgvc,Positive,Yes,profile_sample.png
+6064a8d7ca5c6c2dbce3d42c,dfgtred,dfgtred@gmail.com,784596,Negative,Yes,profile_sample.png
+6064a900ca5c6c2dbce3d42e,qwsdfgy,qwdfgy@gmail.com458,458,Negative,No,profile_sample.png
+6064a947ca5c6c2dbce3d430,bgyh,bgyh@gmail.com,4785,Negative,Yes,profile_sample.png
+6064a974ca5c6c2dbce3d432,riya,riya@gmail.com,riya789,Not Tested,No,profile_sample.png
+6064a991ca5c6c2dbce3d434,raven,raven.01@gmail.com,011110101,Not Tested,No,profile_sample.png
+6064af1bca5c6c2dbce3d436,wsedr,wsedr@gmail.com,asdkfdsj,Not Tested,Yes,profile_sample.png
+6064af3cca5c6c2dbce3d438,bhgtg,bhytgf@gmail.com,784512,Negative,No,profile_sample.png
+6064af4dca5c6c2dbce3d43a,rtyuhgv,ghjmkfghj@gmail.com,sdfgh789,Negative,Yes,profile_sample.png
+6064af70ca5c6c2dbce3d43d,mbqwertyu,mvt@gmail.com,#bwertyu,Negative,Yes,profile_sample.png
+6064af96ca5c6c2dbce3d43f,ijncxsV,werty@gmail.com,kogte5,Positive,No,profile_sample.png
+6064afe3ca5c6c2dbce3d441,tyghd,tyhujedb@gmail.com,fghj52564,Negative,Yes,profile_sample.png
+6064aff2ca5c6c2dbce3d443,wqertyuio,wertyuio@gmail.com,7895,Negative,No,profile_sample.png
+6064b005ca5c6c2dbce3d445,bvfdsa,bvfdsa@gmail.com,poimpoei,Not Tested,No,profile_sample.png
+6064b01dca5c6c2dbce3d447,gysefghku,sdfgh@gmail.com,796413852,Not Tested,Yes,profile_sample.png
+6064b02fca5c6c2dbce3d449,jgjlh,rtg@gmail.com,erdfthg,Negative,No,profile_sample.png
+6064b05dca5c6c2dbce3d44b,gtdsr,trs@gmail.com,46,Not Tested,No,profile_sample.png
+6064b06dca5c6c2dbce3d44d,sgtrd,h@gmail.com,546fgd45,Positive,No,profile_sample.png
+6064b0e9ca5c6c2dbce3d44f,sfdgdbh,vhgk@gmail.com,78963210,Not Tested,No,profile_sample.png
+6064b12dca5c6c2dbce3d451,gdstr,gvftu@gmail.com,4563fr45,Negative,No,profile_sample.png
+6064b15aca5c6c2dbce3d453,jygmnbgf,nh@gmail.com,5472310,Not Tested,Yes,profile_sample.png
+6064b1cfca5c6c2dbce3d455,fnht,fds@gmail.com,jhdlfr58,Positive,Yes,profile_sample.png
+6064b1dfca5c6c2dbce3d457,nfdhvf,bdsg@gmail.com,jhugr78856f,Negative,No,profile_sample.png
+6064b1e0ca5c6c2dbce3d459,nfdhvf,bdsg@gmail.com,jhugr78856f,Negative,No,profile_sample.png
+6065851305b07cc3c4934d20,Abhiroop Basak,abhiroop1.bas@gmail.com,abhiroop,Positive,Yes,profile_sample.png
+6065977e05b07cc3c4934d22,nfdhvf,bdsg@gmail.com,jhugr78856f,Negative,No,profile_sample.png
+6065979d05b07cc3c4934d24,oooo,oooo@gmail.com,dgtr4965,Negative,Yes,profile_sample.png
+6065981005b07cc3c4934d26,www,www@gmail.com,gf64957652vn,Positive,No,profile_sample.png
+6065982005b07cc3c4934d28,jti8,uykji@gmail.com,54sr6y,Negative,No,profile_sample.png
+6065982c05b07cc3c4934d2a,hrycs,hjdt@gmail.com,546htd,Not Tested,No,profile_sample.png
+6065984905b07cc3c4934d2e,jdt,vhz4s5@gmail.com,659dgrtop,Positive,Yes,profile_sample.png
+6065987605b07cc3c4934d30,gtwsg,bgf@gmail.com,659856230b0fr85,Negative,No,profile_sample.png
+6065988805b07cc3c4934d32,thwe,kfjmjhngb@gmail.com,ujtef9v56210ngrfwtynsbftrh,Not Tested,No,profile_sample.png
+6065989b05b07cc3c4934d34,fdwrdfs,qawe@gmail.com,poiuytrewq,Positive,No,profile_sample.png
+606598bb05b07cc3c4934d36,james,james.01@gmail.com,gujhdfwcr95,Not Tested,Yes,profile_sample.png
+60659ad305b07cc3c4934d38,lily,lily@gmail.com,jfaegt5,Not Tested,No,profile_sample.png
+60659aee05b07cc3c4934d3a,wwwww,wwwww@gmail.com,562b1h0g0,Negative,Yes,profile_sample.png
+60659b0305b07cc3c4934d3d,ken,ken@gmail.com,ken01111,Positive,No,profile_sample.png
+60659b0505b07cc3c4934d3e,ken,ken@gmail.com,ken01111,Positive,No,profile_sample.png
+6065a90705b07cc3c4934d40,amy ,amy@gmail.com,5463y1amy,Positive,No,profile_sample.png
+6065a92005b07cc3c4934d42,penny,penny@gmail.com,852dfghj,Not Tested,Yes,profile_sample.png
+6065a94605b07cc3c4934d44,lucy,lucy@gmail.com,98410aa,Negative,Yes,profile_sample.png
+6067626a7872489d394f8f6a,Abhiroop Basak,abhiroop1.bas@gmail.com,abhiroop,Positive,No,profile_sample.png
+6067626c7872489d394f8f6c,Abhiroop Basak,abhiroop1.bas@gmail.com,abhiroop,Positive,No,profile_sample.png
