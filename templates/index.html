@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>MAPCovid</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript">
+        function Validate() {
+            var password = document.getElementById("txtPassword").value;
+            var confirmPassword = document.getElementById("txtConfirmPassword").value;
+            if (password != confirmPassword) {
+                alert("Password do not page");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<style>
+    * {
+        margin: 0px;
+        border: 0px;
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
+
+    #ban2 {
+        background: url(http://127.0.0.1:8000/media/bg3.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        width: 100%;
+        height: 700px;
+    }
+
+    #ban {
+        background-color: rgba(0, 0, 0, 0.7);
+        margin: 0px;
+        color: white;
+        padding-top: 1px;
+        height: 70px;
+        width: 100%;
+    }
+
+    input[type=text] {
+        height: 40px;
+        width: 300px;
+        padding-left: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        transition: none;
+        text-decoration: none;
+        outline: none;
+        color: white;
+    }
+
+    input[type=email] {
+        height: 40px;
+        width: 300px;
+        padding-left: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        transition: none;
+        text-decoration: none;
+        outline: none;
+        color: white;
+    }
+
+    input[type=password] {
+        height: 40px;
+        width: 300px;
+        padding-left: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        ;
+        transition: none;
+        text-decoration: none;
+        outline: none;
+        color: white;
+    }
+
+    input[type=submit] {
+        height: 40px;
+        width: 100px;
+        background-color: rgba(0, 0, 0, 1);
+        border-radius: 10px;
+        ;
+        transition: none;
+        color: white;
+    }
+
+    ::placeholder {
+        color: white;
+    }
+
+    td {
+        padding: 8px;
+        color: white;
+        font-size: 18px;
+        text-shadow: black 8px 0 10px;
+    }
+
+    label {
+        color: rgba(0, 0, 0, 0.9);
+    }
+
+    hr {
+        width: 50%;
+    }
+    .col-lg-6{
+        padding-left: 0px;
+        padding-right: 0px;
+        border: 5px solid white;
+    }
+</style>
+
+<body>
+    <div id="ban">
+        <h2 style="padding-left: 40px;padding-top: 10px;">MAPCovid</h2>
+    </div>
+    <div id="ban2">
+        <div class="row">
+            <div class="col-lg-6 col-md-6" align="center">
+                <div id="pop" style="padding: 10%;padding-bottom: 60%;background-color: rgba(0, 0, 0, 0.3);">
+                    <h2 style="color:black;text-shadow: white 5px 0 10px;"><b>Login</b></h2>
+                    <hr>
+                    <form action="login">
+                        <table>
+                            <tr>
+                                <td>Email: </td>
+                                <td><input type="email" placeholder="Enter your Email" name="email"></td>
+                            </tr>
+                            <tr>
+                                <td>Password: </td>
+                                <td><input type="password" placeholder="Enter your Password" name="password"></td>
+                            </tr>
+                        </table><br>
+                        <input type="Submit" value="Verify Using Camera" style="height: 40px;width: 200px;">
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6" align="center">
+                <div id="pop" style="padding: 5%;background-color: rgba(0, 0, 0, 0.2);">
+                    <h2 style="color:black;text-shadow: white 5px 0 10px;"><b>Registration</b></h2>
+                    <hr>
+                    <form action="yes">
+                        <table>
+                            <tr>
+                                <td>Name: </td>
+                                <td><input type="text" placeholder="Enter your Name" name="name"></td>
+                            </tr>
+                            <tr>
+                                <td>Email: </td>
+                                <td><input type="email" placeholder="Enter your Email" name="email"></td>
+                            </tr>
+                            <tr>
+                                <td>Password: </td>
+                                <td><input type="password" placeholder="Enter Password" name="password" id="txtPassword"></td>
+                            </tr>
+                            <tr>
+                                <td>Confirm Password: </td>
+                                <td><input type="password" placeholder="Confirm Password" id="txtConfirmPassword"></td>
+                            </tr>
+                            <tr>
+                                <td>What is your Covid Result?<br>
+                                    <input type="radio" id="Yes" name="covid" value="Positive">
+                                    <label for="male">+ve</label>
+                                    <input type="radio" id="No" name="covid" value="Negative">
+                                    <label for="female">-ve</label>
+                                    <input type="radio" id="idk" name="covid" value="Not Tested">
+                                    <label for="other">Not tested</label><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Have you been Vaccinated?<br>
+                                    <input type="radio" id="Yes" name="vaccine" value="Yes">
+                                    <label for="male">Yes</label>
+                                    <input type="radio" id="No" name="vaccine" value="No">
+                                    <label for="female">No</label><br>
+                                </td>
+                            </tr>
+                        </table>
+                        <input type="Submit" value="Please press 'space bar' to take photo"
+                            style="height: 40px;width: 300px;" onclick="return Validate();">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

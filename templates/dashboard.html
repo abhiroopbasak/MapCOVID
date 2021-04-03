@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master_Dashboard</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    * {
+        margin: 0px;
+        border: 0px;
+        scroll-behavior: smooth;
+    }
+
+    #ban2 {
+        background: url("media/bg3.jpg") no-repeat center center fixed;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+
+    }
+
+    #ban {
+        background-color: rgba(0, 0, 0, 0.7);
+        margin: 0px;
+        color: white;
+        padding-top: 1px;
+        height: 70px;
+        width: 100%;
+    }
+
+    .col-lg-5 {
+        border: 5px solid black;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+
+    .sidenav {
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        overflow-x: hidden;
+        padding-top: 20px;
+        font-size: 20px;
+    }
+
+    .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #c4bebe;
+        display: block;
+    }
+
+    .sidenav a:hover {
+        color: #ffffff;
+    }
+
+    #main {
+        margin-left: 160px;
+        /* Same as the width of the sidenav */
+        font-size: 28px;
+        /* Increased text to enable scrolling */
+
+    }
+
+    #main2 {
+        margin-left: 160px;
+        /* Same as the width of the sidenav */
+        font-size: 28px;
+        /* Increased text to enable scrolling */
+
+    }
+
+    #main3 {
+        margin-left: 160px;
+        /* Same as the width of the sidenav */
+        font-size: 28px;
+        /* Increased text to enable scrolling */
+    }
+    #main4 {
+        margin-left: 160px;
+        /* Same as the width of the sidenav */
+        font-size: 28px;
+        /* Increased text to enable scrolling */
+        height: 600px;
+    }
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding-top: 15px;
+        }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+    }
+
+    .container {
+        padding: 0px;
+    }
+
+    .row {
+        padding-bottom: 50px;
+    }
+
+    h1 {
+        margin: 0px;
+    }
+
+    button {
+        height: 50px;
+        width: 150px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-radius: 15px;
+        border: 2px solid black;
+        outline: none;
+    }
+
+
+
+    button:active {
+        color: black
+    }
+
+    input[type=submit] {
+        height: 50px;
+        width: 70%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        font-size: 20px;
+        margin: 20px solid rgba(0, 0, 0, 0);
+        border-radius: 20px;
+        outline: none;
+    }
+
+    input[type=submit]:active {
+        height: 50px;
+        width: 70%;
+        background-color: rgba(0, 0, 0, 1);
+        color: white;
+        font-size: 20px;
+        margin: 20px solid rgba(0, 0, 0, 0);
+        border-radius: 20px;
+        outline: none;
+    }
+
+    .mapcontainer {
+        display: none
+    }
+</style>
+
+<body>
+    <div class="sidenav">
+        <a href="#main" style="font-size: 20px;">Analytics</a>
+        <a href="#main2" style="font-size: 20px;">Local Authorities</a>
+        <a href="#main3" style="font-size: 20px;">Vaccination Centres</a>
+        <a href="#main4" style="font-size: 20px;">Alerts</a>
+    </div>
+    <div id="main">
+        <div id="ban">
+            <h2 style="padding-left: 40px;">MAPCovid</h2>
+        </div>
+        <div id="ban2">
+            <div id="ban3" style="border-bottom: 2px solid black;background-color: rgba(0, 0, 0, 0.2);padding: 30px;">
+                <h1 align="center">Analytics</h1>
+            </div>
+            <div class="row" style="padding-top: 5%;">
+                <div class="container">
+                    <div class="col-lg-5 col-md-5" align="center">
+                        <img src="media/Figure1.png" style="height: 300px;width: 100%;padding: 30px;padding-bottom: 20px;">
+                        
+                    </div>
+                    <div class="col-lg-1 col-md-1" align="center">
+                    </div>
+                    <div class="col-lg-5 col-md-5" align="center">
+                        <img src="media/Figure2.png"
+                            style="height: 300px;width: 100%;padding: 30px;padding-bottom: 20px;">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <div class="col-lg-5 col-md-5" align="center">
+                        <img src="media/Figure3.png"
+                            style="height: 300px;width: 100%;padding: 30px;padding-bottom: 20px;">
+                        
+                    </div>
+                    <div class="col-lg-1 col-md-1" align="center">
+                    </div>
+                    <div class="col-lg-5 col-md-5" align="center">
+                        <img src="media/Figure4.png" style="height: 300px;width: 100%;padding: 30px;padding-bottom: 20px;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <div class="col-lg-5 col-md-5" align="center">
+                        <img src="media/Figure6.png" style="height: 300px;width: 100%;padding: 30px;padding-bottom: 20px;">
+                    </div>
+                    <div class="col-lg-1 col-md-1" align="center">
+                    </div>
+                    <div class="col-lg-5 col-md-5" align="center">
+                        <img src="media/Figure7.png" style="height: 300px;width: 100%;padding: 30px;padding-bottom: 20px;">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <div class="col-lg-5 col-md-5" align="center">
+                        <img src="media/Figure8.png" style="height: 300px;width: 100%;padding: 30px;padding-bottom: 20px;">
+                    </div>
+                    <div class="col-lg-1 col-md-1" align="center">
+                    </div>
+                    <div class="col-lg-5 col-md-5" align="center">
+                        <img src="media/Figure9.png" style="height: 300px;width: 100%;padding: 30px;padding-bottom: 20px;">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main2">
+
+        <div id="ban2">
+            <div id="ban3" style="border-bottom: 2px solid black;background-color: rgba(0, 0, 0, 0.2);padding: 30px;">
+                <h1 align="center">Local Authorities</h1>
+            </div>
+            <div class="row" style="padding-top: 5%;">
+                <div class="container">
+                    <div class="col-lg-6 col-md-6" style="border: 0px; margin: 0px;" align="center">
+                        <div class="row" style="background-color: rgba(0, 0, 0, 0.2);">
+                            <div class="container">
+                                <div class="col-lg-3 col-md-3" align="center">
+                                    <h2 style="font-weight: bold;color:black;">Vaccination Centres: </h2>
+                                </div>
+                                <div class="col-lg-3 col-md-3" style="padding-top: 10px;" align="center">
+                                    <button>Call</button><br><br>
+                                    <button>Email</button>
+                                </div>
+                            </div>
+                        </div><br>
+
+                        <div class="row" style="background-color: rgba(0, 0, 0, 0.2);">
+                            <div class="container">
+                                <div class="col-lg-3 col-md-3" align="center">
+                                    <h2 style="font-weight: bold;color:black;">Hospitals : </h2>
+                                </div>
+                                <div class="col-lg-3 col-md-3" style="padding-top: 10px;" align="center">
+                                    <button>Call</button><br><br>
+                                    <button>Email</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-md-1" align="center">
+                    </div>
+                    <div class="col-lg-5 col-md-5" align="center">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUTExMVFhUVFxcYFxUWGBUXGBcVGBYWFxgWFxUYHSggGBolHhcXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQGC0fHR0uLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAADAQIEBQYAB//EAFAQAAIBAgMEBQYICggEBwEAAAECAwARBBIhBTFBUQYTImFxMoGRobHRFCNCUnJzssEVM1NigpKzwtLwJENUg5Oi0+E0lLTDFkRjZOLj8Qf/xAAbAQABBQEBAAAAAAAAAAAAAAACAAEDBAUGB//EAD0RAAECAgYHBQUGBwEAAAAAAAEAAgMRBBIhMUFRE2FxocHR8AWBkbHhFCIyUvEjMzRCcoIGJGKywtLikv/aAAwDAQACEQMRAD8AjdH8P1cWXvq1FEwkkbKkIXK1zlbOGvffmBtYaDd6KSWIqSGBBBI17uI5iuho75tDTeAuB7RhHTOiC1rjYeCSo20fxUn0GqSahbSlvGQN5/nlUkQyadapQWF7xJed7WD5nsg1ZtTrxNVUkco1vu944VsZYluc6sTfh1f307DGD8jO3C2WE+1TXNaIi8jfyXoopDTa0OM8bJeM1iMNB2307/AHWjrDre+U89furXddgg2sM58QLju0tVgNoYHqyvwaQqSDm6shgdNQQaLQz/MPFCKVb92/w9V571bt2U1zG9xyFx69/mqTNgZha6A3NhuuTwr0XZU+DcgdVNbipjuT4BWF6ZizBnOVZAL6Dqt3+c+2mMMjEeKkEYETkR3HgsccO2g6ogWHA77a3OvIV6RsYWhQfmiq/D4dWIC5rndeNgbdygm9bL8DMyKY1IYCzKyslyPlLm4niKvUCIIbiHYrF7dgPjwW6MTLTOUjPumOsFU0oNOZCCQbgjQg8DT8Phmdsqi5PoHeTwFbNYATJsXFNY5zqoEzlj4Kl2rv9HtFec4iIyYiaS4BMhGvnFtPo161tzBpGVu+fXtZEZitraG2ttORrNwdH8OXd/hDrnOqtDL/AA95rDpb9L8Fy7PsiAaKDpBaQLrdt3cvPsTEb7l3d9u6/Kq54SB5APgTXq+J6I4Zt2Nj88RX2tVbL0Qh1/pETH6QT7RqhVflvW9pGHFebgH8n6zUmMG34v1/71rh0dS+UstrnVWzbvD30Z+jYUkIpZeHajv6C9N72ScuaPzBZ7ZkYLL2SNa9Ywg+Lj+gvsrIYPZFnAMUim43hSNe9WNb/F7LeELfVbCzDnYaEcDWt2a8AFpvK5f+I4T3tZEaJtbOZGG1Q640tGw2DkkNkUm287gPEnQVqlwAmVyrGOeQ1omTgFlelUd+NtKyLQWPleqvUekfRwBVLzIpO8EGw5dq1qzKdGFY6TRnWwIdd4FyNTy1rnaWdJFLm2jrvXoHZLDAozWRLDl1YsdiYxbyvVUTKnzm8wrbYjoe5+Wh7xc/dQD0Jk51UtyWtNspzWKZUUOVZg2lgb2I3m/A0mCuDe9u42tbiOGtbOboU7bmGYbwb6jxANjQF6F4kXFkPIgk25aWFFUfkh00P5lXphfjASwFm9YQ3Fb/AAq2RB+YnsrPjo/KXXMdEDWGm8i1z/8AlaVYyoAI4VsdlggOBsuXL/xG4O0RbaLbfBIabT6bWquZTKSlpKSIJpplPNMpIwpGI2GyqOpgZDe5LIzeAAt6TV3h5JBD1UsRkJF1dIytrcGS3Z8R661nwF/7TN6IP9OnfAn3/CJvRD/p1zxjiVglLau7bQTbXfWBGIC83nU3y7itr91qgrGDvJ85t6huo0spJcne2p8Sb1pdhdcY40WUKpSRrFM1istrXzDTtGtGNF0YrOE8N01zFCojaQ7RsNWwmcp4gAc9ayMmyIma+t/EH7r+upMuyYyBklZWG7KuXuNypBrbHDT/AJWI/Sgv/wBynxYObfnwv/Lkf92qTo8B98Pet1lAp0OxtIHe31XmH/hbtZs6luZDHjfnWwwuDjGHKmGDrLHdhwfAl89/PatCdmOd4wx/uG+6WlGxT8zDfqSj2SU1ajSsaR3omwO0gbYrXftI4LF7Lw2Lhkzo0CHUXGcaa8NRVxjcBC6g5o+vJu0meYAE+IKn1Vfx7GYG4TD+ib+OnNsVjvSA685t/wCvTTo+R3c0YZ2iAffYetnCxZ7A9HIUPWtiIsxOtjfTkB5z5jar8QMxUxYgdm3ZcRnNbhbeBwpw2AfyWH/Wn/ip6bDIH4uDu1m0vv1zULjCl7s/Ac0TWUufv1Jai7kqvbbo6Z1v1kZyOefIG2hI51R4HGyq/wCbfVL2DC3876vOkEJiMakIqsGNkzWvpc2YnXXhVEuLKuZF3osjC+66RsRceagdTzDYGBtYTlx42KE9jNi0kxS+oZA2arN8rVoJMdG4sMGFv8oDXx7O8+NFQwZctsWp5q8q+x6OyYrjLCfGF/8AWrsuI3fEH9Bh+8aExQRKrv5zVsUR4M9JP9o4SUR4IuGKxy/3j/eTT48LFbXG43zu3uqT1cx3x4Y/rD9w04RTfkMN/iSD2RUxeMt/opNDEH5x4f8AShIIgf8AjsT59faKlnE4YDXFy+Gn8NEEM39nw/mxE4/7VccHKf6mL/msR/p0q7fl3+iHQxvnb/5P+yANobPG+Vj4r7kqPitt4ZUKxXfNvUqSlu9iPZVh8Bk/Jr/zU3+lSPshmFmiUjvxM33RU1dotDd//KWhjGwvbLU08XlZmeJWKmLyHNgDc5TpdT4XraxwIqqiLZRffbygBq3jWNxI6t5EsFyObAMWA0G5iAT42qyw3XSXJlWwNrGMGwsCPlciKsxqQ6JChF3Vyz6FQmQaXSGswlLVMTlqtU3bOxZZToQoHzR6fG/fy9ObxnQ6QnyYiON7HfuuTvPvrQJg5hukj/wf/spfgs35SD/AbXn/AF1VRV6+q1RDeLpePoqKLYWIFiSrMBbICwDafP3C2lgKuNmYEZAJo2D2a/aB4bjv9FGeHEHfJhz/AHMns66uiws43Nh/8GT/AFqTgOpIwHg/VRGwXVqwiSzalcoUHeb3ViM581Mk2RGx62RHEhABsyJew0JXXv41aGHEEWLQf4Un+rSLgJt/9Hv9VJu4/wBbSFUX8EnB9zZb1QS4EAWAIF7gNYjfqLjzUQYYWtw00OvKrw7Kc/2b/Af75arsdgCsmaRkCKpPxYyAsDoQpJN7d/CpA4T90kHrJV3NdL3wCOs1nMXEFOm72W0IqPUvGKLAg3v/AD7qiVvwH14YJXC06E2FHe1t3NMJpK6uqZVwmE02lNJSRheuCubcfA+w11CxDWVjyVvZXJm5emC8LzfEQwqAcxu+lrWGgGt/0t3dV9scKDGFOnVzcb/1sR++sltKY2j05/u1oejLXER/Mn/aQ1AymxIsUw3XDlJMKBBgCuwAE858FpFNHiqOtSIqsJIyUUUEUdKSSeKeKYKeKSScKdekFdSSWV6cb4PCT1BKyUY7Mn1U37J61nToawf3v2VrHQnST6qb9k9UYkZwihounwajEBjhWN8uJXpTCmg0hOtKKuoURaMtBFGWnTIi08UwU8Ukk8U6mCiU6S882oL4ic/nH2N7qtdkNo30h+zjqm2kfjcT9Y3terbYw7JPMj1Ig+6ohHc9sNpwaf73DgoYUBjIsZ4vJH9rTxVzGKdTVpTUimXURaHTlpJIq0VaCtFBpJIlZfpLO3WhL2Up2ubXLdnu3cOdaYVhemwPX3sbZBY+m9udRR6QYDawE8E4gCMapMsfTvTNqxrkQrxvfz1V0ZG+Ltc70+zeo7V0XZr69GY44rhe3WBtNeBq8kw0hpTSGryzEw11dSXpIl67UPazWglPKN/smsJ/4txb4KSRyIJGx3wbMQp+DxlgCTfQsBcXOlzVh0d2w+I2di+skErQviIRKAB1iIDlfTTUEVycQe445DgOY4L0thm4DP15LLbT8mPwP3VpujC9mP6qT/NKP4TWVx73WPzj7Nazo1uXuhU+mab3VnUQzivOrgrcb4BtV6tSojWBx2DfGbQxELYiaJMPDEYxE5TtyBmMjW8q1gLUyZ8VNicLs74YwHwdppcRDYNMQ5RQCb20AvbfWk22Wv15KmTLrYvSFNFWvJ8dj8dCMfhI8VJI+EjixEMpt1hjuC8UhA7XZJ9FWc3SaXFYiAYaVkijwT4qfLbVmT4uMk7iGG7vp+t0+CW3rqa9JBp4ryDYW0sZi22bE2Nmj67DTySOmTMzJNIF8pSNwA3cK2nQPHzs+Mw08hmbCTiNZiAGdGXMM1tLjn30RYR1rkhDwetU1rhSE1WbK25h8T1ow8qyNEcrWDWVzmABuBxB9Feb4/DzjDYgTv8ACcuPmMwDCLPlwV1KBmFkSTK2UHcl6BOT13LX9O21g/vfsrWQi3P9VN+yervpDI3VYEOSW+D3a+8t1SXv36VR4c+X9VN+xkrKjfiP3f6q2z4J6ua9AxeLjiVpJHVEXVmYgAC/EmmYLa0EsZljmjeMXu4YZRbfc8KoenkRMMTlS0UWJhkmUAteJWN7qN4BIJ8Ky/SHFYSaJpYImGF+G4b4XKFIjmiUG7BfmqSubQbx5tNtvWzmqx638l6ZhtowuhdJY2QaFldCoPIkGwqb1gG8gX3XIF9K8pfAYXFY+WDA9V1MuBkXEGG3VdYWPUN2eznDZKh7Fxr48BpFIGzMDMr5uOLaN4wTzsqA+IopYpsZL2UTr85de8UZK8S6L4DBy4jCrjBEY12VER1pCrmM76gkjWxNbv8A/neKkGy+sCyShWn6hb9uSFZG6oAtzAsL8qRSW1zWBJ0A1JPACgrtKEuiCVC7rnRcy3ZPnKOI76ott5sVs2YypLhyY5GaPMoeyZjlZluMrZRe3A1mMJhz8OwKoQT1eEkcZHzrGmFnQlZPJ6s5tRfyiOdKdskjcibT/GYn6x/tGrODFpDBJLIbJH1jMd+isQdOelV21PxuIHOV/bUjaGzmnwc0KkBnMwUndm652W/cbAVWaCKv6f8AJ5Sh/FE/V/g1Gw/S+DqpJJVkhMRQNHIvxl5PxeVVvmzcLcjRIemGDZC/WMuV0jZXR0dGk0TOhF1B5nTSqbaUWPnRZnwyqcPiIZkgV1aSRUVhJdr5d7XUfm1GxWx5ce+NlMMkKSYVYYhKMrtKjdar5eFiAAe+rE+t6S1u0tv4aBiksyIwTrCDfRM2TMbDQZiB56ZN0rwMbmOTFRI4sCrMAQSAePcQfPXmmLws8+z8djcRG4llGHhRCrXEcLxAnLYNZnud3A1ObG4eKXa0c6FmlyrEnVs+ciBlGUhTbtEa0+aWS9ZjYEXG6iFrXJ0A1J5Csx0dgxUGzIEEYfEJCgEcjZRfTss2trKfVU+bCNicJkxcYRmF5I43YroxIXOLEqbC44g2pFIWp8/SfBpHFK2IjEcxtGxJs+tiRpuB4nSsz03xJacJwRBYd7amspjMDJ+DsAsYk62XBzQZepaRW6yRDkzAjqXuAcxFrBuVaDpfHbEEX1CRg+ZAL+2qXaBlDlr58lYowBd3IK+SPH2C1MajMLIPH7tfuoBrquzvwsPYvPe3B/PxesElMJp9DNXlmpKbTjTaSJa5OjeIGHxUayRI82KeZS6iRDGzq2R1PMC2m7SpOA2MMNgJ0zK7Os0jsoCqXcEkKo0CjQAchV2NmQ8Yw30rt9q9LjowIJFAAHVuLAWHknhXKRSNG4A3jhLNeksrVwTn1gvIp9Yoz3v6wprXdFjoPqI/22JrLMvxKn872g1qeiu7+5j/AG2J99ZVCP2rtg4K9H+AbUDpDsOCeXOz4mKTJkd4A/bjPyGIUgjfQ59gYQrAIZZcNJhlKRSIrZgreUrB1s4JJOvE1qUqVFWsKoF2/wBFQIdmPD1Wd6ObNwmGMrNOZpZ/xsstszgAgLYCwWx3VF6KdGcFgosTHHiM3wgEFmtdUKsoUW32zE341tAaIpoqzMj4+iH7S+Y8PVYCHohAgw3VY+WN8NE0SvGilmV3ZySCDbyreatN0cwmGwkbJG0rs7mSSR0kZ5JDvZiF7t1XwNEBpy5pw3+iQa/MDu9VBjxSC+SJ9fmxMt/SBVfLseGQMrYPMGm689ay260gDMAGJ3AaVfV1NWGSeq75t31WH6eE9fEOUTe1/dWcwkerfVy/s2rRdOP+Jj+qPtkqkwa6n6LD0jL99YbvxP7uS0B933c1uZlY+S2U332DacrGhdRNa2eMjdYxtuPMB7U/FYlYxmc2FwNxJJO4ADUmjYbEK6hlNweNbTZhs5WbOvNZ7qpdVnI5T4eij4TDSRiyRwKN5yhkue8AGlhwJUOq4eACQkyAEgOW0YuBH2rip60ZKevqCVTWeu5UcvR2F8ufA4NsihFzAHKgvZReLQC5076uIxMAAEhAGgAZrAcgAmgqStOzAakgDvpVtQSqH5j13IBWY7zGB9Fm09Io2HicG7OpG6wS33miAU7NSLtiept8SvO9ogfCJRzmb7S1cbPjDRKGFwdbHvN6pMS95ZG5zt9oVaw4gx4dWAubKoB0GYsEF7cLmq8I1i0C+q3fPmk2QEUn5juAHBWCbPThnX6LyD1ZrUpwZ4SyDzqftKaYmOCACbKjkkCxJBAI7XcNRvo/w2LtfGL2DZu0BlO6x5bqt+/1bwQDRHVu8UL4JJ+XfzrEf3RRhh5fy3pjX7iKeJBzFHjPChrHLcEVRvRKCsE35Vf8L/507qJvyw80Y/iozyBbX4kAaE6nQbqLSrnoBKoMz4nmoi4eS+szHuyxi/8AlvWD6aG+Lf6KfZFejlhe1xfl3V510tH9Lf8AQ+wtZvaZJhNnmrVDADjLJR5XtYGgZxzo2JXUEjhUYoK7ChWUeGNQXnfakjTIx/qTjIOdMMq8xSGIUIwCrFZUwG5ohkXnSZ15imGBaH8HFKaOTc17KzAbzah4kXRhzVvYazeMw0ki5grMc82UFFZSCRlzByLDTRuFaXXJrvy623XtrauajQ6jL75r0CDGL3EVZAStzXkYX+j+BT2NWl6LHT+5T9tiazY/EeJX2NWj6Mjf9TH+2xNY1D++P6RwWnH+AbVMkmneWRImVRGE0Zb52fMbE/JHZ31PTa6B8jA6MqM4F0V2AspbzjhxFRMXs9JGJ6xlNgsmRgLrvCty466b6MdjqzE52CMyO0YtZmS2U5t4HZW/O1bjTDkJ2WcscdXhcVku0wJLbZnPC3DDI96lJtuIqW7dgcnkHtPcrlT5xuDuqQNsRWU9oliyBQpzZ1GYqV4G1RU2QOrVA1mRzKjWvZyzNqOI7ZFGw2ygrI5clw7yMbWDM65N3AAW57qIiDr6Gzo2STTpOro7cMuaK+24hGJbMVIJJC+SFNmzX3EHh3UZdqoWy2a/WCO3eU6zN9HLreq5ujaFQpdrBZF8lTpI5ckX8ltbX5VZx7NQSiXXMFyd30rc7aUzhAAsmb/T1QNNKJtAw8rTyUSDbLFAclwEidnJC3MlgBlF9af+E3MypYBS7oSLEkqzqL63UWXfY63qVDsuJUMdiVKohuTqqCy+fvo8OFRbZUUWvbQaX1Ou/U39NMXQrZDqXNEIccym7qd3hfbesh01b+kILD8Vv473Gnp9VUmB8ofSiH608S/fVx04/wCIj+r/AHmqpwnlD6cH/Uw1z5P81L+pbNX7KepavHwserdRcxvny3tmGR0IBOl7NceFV+OinYBjG6nJJlSJ7ZZS10ZyCAdN51F786mbTxPVZJC1kVwJPoMCt/MxWo2D20R1SyjtSAEm69nMrSAFBqAFA1roYNeqC1s7+M+edyxY5ZXIc4i7KWEjnqXSR4gCVy0l+sjWy6gRZYuseNeJvnsfGj4d5nKLnkEZeXK9rO0YRSua407V7EjWwqTFthCmcpIoOXLddXz+TlAO88jYjjRW2ugsxuq5Hc5lYMMrKpGW3NvZajrPxZ1LzQaOHhEPR471XxY7EHqT8YGywl+AOZ7ObBeW+5Fr1LBxBzq17Ruqg2HxgaZWzbvkx2HpqX+GYrHfcPky5SGzZc/kn83WrDDTK6q6m6sAQeYNM55F7JJMgtdMCIT1LPORO+9Uj4Wfq9A7M64gHteSzkdWdToAoNrVZYDCtG8rHczXG4nexOoG7UWB1GtTxSS+S3gfZUL4pLSFYh0ZrXAzNi81DdgHm5v6FNXcCq0RVjZSzLe9iD1hVbHgc1qpWNok+m3sWrZIy0LhRdryFR+csrMvrArMob6zhbKTWBW4rKrH2XucfJSX2TmUgTMcwZJGNmJViCQLWCkcLDjurpdmEWZQjMsjyWbQNnzgAmx1GbfUKKSeNkAVtQzOupVndJJT8mwPWWXf5qKm1HsgEsbFjrIykBCI85VrEa379OOtbZEQXOBH1yw4SWWHwje0g/Q7cbb7bygy7Afq2XsMwhCod2WTrHe633AZgAe6pI2bIcTnZQFzOGZSBmjaMqLnyib89BpalXabBjlAYs2HA7RyXkViSum7SkHSI2A6osw60sAT/VyGPs2XUkjS9vGjnGOR9QhIo4EySJHyPXci4LZ+IGUuSWWWFfK/qor9s672JJPgKSPZcscaZUu5WcSdu3akHZYkncNB7K0KG4vzp9Qe0OyHXU1OKIwgWnrqSptnbMdJs5tlKAHVWJbJGunZuvk6i5BrK9Kkvi5P0f2aV6LXn/SZf6TL+j9haze0SYgbPA8FfoUMQphvUyoGIvZddLGw5a6+yolSsWdQOQ99Rq6uiCUBmwLz3tG2lxT/AFFIaaacaZVhU1xptONNpkQXr96Fi3sjnkrew0Wom1TaGU8o3+ya5V/wnYvSm3heUxn4tdNTceb+TWm6NDU/UQ/tcVWYvaw+l+7Wo6PHtH6mL9rivfWZQmkPJN0grMaI0tABtSbYjbrgigkYoIrHgMj3YnldGYeauG25FaQqc4ySsFIQZWRwoGVdQLX8rfarZMfFmK9ZHmU2K51zA8iL3G+p0SqTcAG/HQ92+txkcVQHNn1ysWW+jurlzXSmeh1wUA4+RQqiWNy0iJ1gGkYdSbsAbX0014ium2gym4ZHZYMQc63y5kZbaXt4+FWy4NMpQRrlO9cosfNRkw6AAZFsAVAsLZTvXwNFpWD8vl1qkhMGIfzZZ59G23BUmJ2pOgkF1Y5IXBCgBBI5Vt5sQBrr56udiTu6XZg3bYKwsbqLbyoAJvcXGlSgoHAbrebl4d1Blx8EY7csaD851X2mgfFaWyDZIocBzX1i+Yyt68VNrqqxt7DnyGaTuiSST/MikDzmiw4yZ2FsOyJfVpWVTb81EzEnxy1CrKzHTM3xCD/0wSfBn/nzVV4YWI+nD/1ENWnSs3xgHERD2tVfGmo+nF+3irEIPtUz8yvT+zlqWolgV1KOAynep40yTZsbPnIOa4NgSASFKgldx7JtUfGwwOyCVVJs2VjoQLrezbxqRXR7Kjv2JJ1tbRZpCNRcaOWFbbXPaLCVQc1jr5dfVSE2QoXKHfQoUJa/V5CSuUEW0vxuTRJNjq/lO5OQoSbEkM6uTu01W1uVAXZso3YuceIw59sVSEwM/wDa3PjHB9y1IIz81GYEMiVXz61Ik+xI3ZnuQWfPeymxyCO1mBBFhxq0giCqFG5QB6OdVi4Cc/8Am5B4RwD2oaImzH44qc+HUr9mMGmL3OsJTtgsaSQLTzmrMUKdxlcAgkKbi+o0O8cKhR7HhbVmkkv8+aVx+qWy+qjthY4opOrREGVvJULuU8qif8JUovC8+kQmNBzY/u1e4WVlS6oXOZ7qCoNizG4zEA+FxUCOAFV13H3e6pUcrrGrILkM1xzFpDY8hcCs6gsNdzTYZNv/AEqxHeKkxbKfnLBT/wAMINHSWP6Ub2H6agr66Vdo4WTsiWFtb5cyHXnahptdQwVlIJNtNbEHKSTy3emkxG0MOwBZcwbNYtHoQqs17sNxCnWtbRRBaAqOmhG8qekCE5sqk3BvYb1FlPmFI2zITvjGhY8Rqxu17bwTraq78GYEkjqoAQLtYRqQNNTbdvHpqTHsfDEZlBtzWWQD0q1KbxmE9WG7LcrkU8VTrsXD/n67vj5tfDt0sWysK4BChgd2ZnbeL7mPKhkclJMZq36wXtcX5cfRXn/SRycTL9ID1LW2wey4IjmjhjQ7syooNvEC9YjbKhsVJ9YdKo010mtGZVmjXlV0/lHwoLUfGjtt4D2Co5rsYP3bdg8l5nS/xET9TvNdTaU0lSqFNNNpTSUyJenfhCZvxeHa3zpmEY9AzN6hSbcLDCSk2zdW17brkW07qsxVb0jP9Gk7wB6WFcpGP2bti9IaPeC83MBspsba/dV/sAWIv+SHqlm/iFVt7afzxq02U/bXvjf1On8VU6O8h5YRhPcDxROhitXB1b5cFOlfDszLIsfZIB6wJqSobTNv0IpYthYI3th4hqRooXUb92+mYjZiOWJJuwIO7ihS4HcDQ02MzMHLBSHY21PZLqwIItZuz6+6tVrYZHxSVV74zTKrP64qw/AOFG9LXIHlyDU7h5VHh2FhmF8hI+slO7Q6Fu6oUexDky/Fnto1ypu2WQv29dTbSjLsViR2weRIOZPjXkzR66EhgD9EU9VnzodJFn935KanR7CX/ERk/nDMf816PHFhIr5VhQrbNlCArcgDRRzNqZgtmBHD31+OvYb+skDi5vwtauj2OgNyzGxuo0GUGVZSLgdrtKN/AUMmfMSirRZD3RPrruRH2xGL7yLAggbyet7NjuPxRGvEgVZVBOzY9NPlBjxuVdpBe/JmJ0qaTQuq2VUUPSCdeWpYnb6XxrG+5VH+Qe+ooQj9eL9tFRdvuDiJSDe5UC2t7Kt9fNUaPFkAXBOo3bxY3Bt4gHzVSdRSGsjnEmzG9JtNYaQ+ji9oFuGNmo9YLQ4jBrIVLX7J05eUjWI4+QKhnY77g+UAjLY7xlIvpuIJNvCm4bawtz8Rr6qsY9ood9x6D99WWUlzRKctqeJAhxLShnZ0hvdr/Gq4OdxcCTNly7lsvZ032okOExClO3oMt7NYCxbOCtu0Tprw9syOdD8r1H3VJEi/OHpqUUjYg9mbr8daiYXDTLGymQ5jGoDE5rPkIY+F9a6PZ0hIJcixJC5nbLdoiO0bFvIff+Uqckq/OHpFO+EIN7L6abTHVuT+ztMpzs165qPgNn9W5a+mRQPH5T24E5UH6HfUnaJ+Jk+g32TULEbdgX5V/C1U+0OkhdGCqApuNbkn3CgcTGdVbaXWJy+HR2F7jJrbVB2eQZHXfoh9C6+2rLZ0RCgHf/vWawxbNmU2I41ZrtFlO649lFT4QgPaQQZgDwWf2LSzSIbwWkSc4g4e8Zy2iavvgqXJKgkkHXXUAAHXuFCk2ZEQRlIBzbiw8pWU8dNGPpqJhttJuN1PeL1YR45D8pfTUTY5GJWqYbSZSBKiPsdGJuWsSxy6WBYjMRpfW3E21NSW2cpRkubM5k4aEuHtbitxu41MRlNEy+NGKS4ge8h9nYPy3qsg2KgN73IKm9lFiszTHL80Eta3IUbZ+zBG+a+ixpGo71Fi503kBB+j31Yr4Guzd1EaQc0AozBKQuRKx8+AJnkfLoXbU8rmtY0tt9gKotr7VRVJWzHuNV3wtO5rReCpzHbAa57jILH7S0lf+eAqLRJpCxJO8nWg11jBJoGS84iuDnucMST4ldSGlptEgTTSXoeIxCoLsf8Aeod8Q/aGVQdwa97czUbooaZYqzCo7nitMAZkyXuN6r9vn4hr7tPtCq/H9IcouLIPnMbmszidstKfKYjmb6+Arl7Yp0bLSV38WI2AwxYhkBaouKPaNraejdR9nY4KRpqAwsT84qTrx8gbu+q3Ey2056UIYjlpR9pPgwnta0e80AEjyWZ2N7RFa+K4+68kgXytvnlgthHtmMeWGXx/3tU2HakJ+X6j91YZNoyD5Z8+vqoox6m2eGNvEEew1SbTIeLpbRyK2HMiAWAePPmvQI9oRflF9fuqSMdEB+MWvOn2su7qYxysWt6L1Jw/SSQRmNYUKkG5tc67+1vqcUmGR8Y8CopRPk3hb07WgH9YPQ3upkm2owMwWRhzCm3przD4WD8gekmpUuLl6sE6JewGYD0Le/q89M6kQhc4nu5lM1sc3sA/d6LYYjpfbyYiORc29RsfVVBjOkkspszWTiq6VnTML6kmi4dSxsAT3VXNJDrJWbfPBWNE4TJPh1NW8T33cNPVuomaq7CMVZ0O8f7VMgYHT+d4FSU2l6ZzKtliodn9n+zVw4zm6czedutF6y240RMa44+mlbDA8aacEeYqq0xW3HetBzGG8Iq7QI+Sn6oqa205Mo+JQD52S33Wqs+APwI9fuo34KmAuQbd4YD2VJpYuvdyUYgwxgnNj2JFgLjxouMx8zABsg8Av7u6hxbMc8R66lHZBXew9R9hNHXikS5JaKGMFTkVztbfV4mATjc/z3VG2nGqxtYAeYcxSDns9+dyYw2PFUiwoMMYG7j66cyUGLFG6Bj8jS/AXY1ZRp7BQ0mOaREc5NQ6K2jQhDGCglKS2nA91WRwwobYQ+NV2tiM+EkbFacGOscJqLFiCpBC+bX2VPxG05Ta6lPAMt/TQFwhPA0Z8I48oMPEGphFiytO4KPRQ8PMpcPj3zDR27szfu60/EYxyToV7rsbfrGkhwrE6A37qN8HsdRr30+kf0AlUaPqVFMJbyrnxJ9lRcfhQENvRV0I6hY1gBVyjRnw3gqnS6KyNDcwjBY00hpaa7W1rrl5yEhqHjceE7K9pzuVedBnxrOckI8W4Cj4PBKnex3sfu5CoC9z7GXZ8udyviC2EK0W/BvPIaryhQYQk55LFuC8F99SaU029SNYGiQUUSK6IZn0GxT5YSxudfHWleMipI13UWfDEIWOluHGuKa9wMwvRiwGwqi2g+4867Cqr9x19VvfQMYp32OW514X5VK2VhGcAra/b0JtuyX9tV4zjHjkm2aOjwWwIIa2wCfmlfANvBB89vbQjhZeR9VWRwsy3ureO/2XpseMNB7M3WFNXKqmglHyG9B91HSXEhSi9YFO8DPb0VarjTyqxw+2yqFQia37RUFvSakbRx8xQlxyWZi2fOfknz2FT4uj8xF20HPU+u1WUWKJ3LfwqbFh8S4C5Xy9/ZHrtRtojDmUFd2oKog2JEurtm9VTkUeTGtr8hqatcN0dJN5HsOS9o+k6Vd4XAxxeQoHfvJ89WWUerhJA6KNq8yx6sk8ikWItcctAalbNszWPNPXIg++m9KtMZL32+yKTYmrjxX7YP3Vnw2gxpazxUzz7s1oTs0X0cjxAP3ik/B0nB1P6w+6pZnysFIJvxFOw2NRuNidwPHRSD3aMPPWr7OJTkqhjWymo6YKf839YffRRhsRxC2+kPfVjDIp3MD5wakg8L7qbQjWlX2KtTAzHeVHnJ9gqSuzW4v6F95qdcAXJ0HE0hxKAXLC1ud9LFvYp9FSNhBCYmaEmz0GrEm3M29lROlUarhZMqgeTu0+WtWkEwbMLHsmx7+/X+dKrulkd8K43Xy+pgfuoKQyUNwlhwRQnTc0rHYnQx/U39TmtFhxuG8VRbVjtIi/+3X1xn31bdc6toLi263HtW18wHnqtRW1q21SxnSAOpTxH3+mlMZ5ejWo8GNTc2hG8kWG8/7empSODYg389WnQQNSibFncQU5TaidZT1ZudEY33+ug0etFX1IavTusFEUdw9A91PRQOA9Ap9Gc01ZRJJuyTroCdPCsxPtQPcLuvv8x0rVbYltBKb7kb7JrzvDTi27nr+jQWiPDZnzSiGUF78gUP3VTssk53lI/WfDkKsZMOGYMSdNw4X50+1da5jnuNa7IY7V5/CishMBYJvzOGwZ6yhwwqgyqLCnGuJprVJdYoCSTMpCaS9IabrypTRALYqqgWAtUfHAmKRgpIVbk20FLXVxZE2nYvSBesU0pKnvf901fdGvkf33tg99LXVVo33vdwCli/B3rSRjWpUYvv18daWurUFqqoww0Z3on6q+6jw4KPf1afqr7q6up7kxJUyMW3ADwoldXUSZBmxKra/FgunDNcC/nFSRXV1E4SAQNcSSMpLzPpkLYyTvVD/kFC2AfjB9JR6nP3UtdWHC/Ed5Wg/4O4eS1GIxEKsBIQLiwLaLqd2Y9m+njUhMPGxuLHXh5tO8dkV1dWy2chaqTwK1yJ+DRYWOgvYELuKMoF7d/GjHZSG/ffhrcqFOvEabq6uo9I7NBo25KYuFFtd+bPcAeVe+4inDCIAdSNLb+4i/K+p9NLXUxe4YpFoySfC4zcJdjyQZreLeSPOarel0pGFJIIu66X4X42pa6oKQSIRPV6mZ8YVLt/D2nsN6pGp8DkHqualpM6sLJmXjlPaB7gdGHnB8a6uoYQALtpTvuGxGimhk0Fs1rEaq4+VuYXHnFNfAnMSGtfiNCOw63NrcWvXV1Wi4jFQSBlYnLBMB2W4MAL5gpKqAbsLnUE+epuIEtxkPDkPKuN9yNLcqSupB8yLE5ZKya5ZJbi40va1hr2m3a/NCjz1JwMbhbOdbndyOvM7rkeaurqdxsuTMFs5qH0na2Fm+jb0sB99efYDd+ufUa6uqk38dD6xUtI/CRdh8kt6YTXV1dmvOGptITXV1MUQTDU3Cbcw8S5GPauS3ZJ1vz8LV1dVSlCbBtWj2eZPJ1L//2Q=="
+                            style="height: 300px;width: 100%;padding: 30px;padding-bottom: 20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main3">
+
+        <div id="ban2">
+            <div id="ban3" style="border-bottom: 2px solid black;background-color: rgba(0, 0, 0, 0.2);padding: 30px;">
+                <h1 align="center">Vaccination Centres</h1>
+            </div>
+            <div class="row" style="padding-top: 5%;">
+                <div class="container">
+                    <div class="col-lg-6 col-md-6" align="center">
+                        <div id=div1 class="mapcontainer"><iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.1457150318615!2d88.31331421427227!3d22.49871544135006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027a0e6efa0c6d%3A0x42d896de0f8ff8c2!2sVidyasagar%20State%20General%20Hospital!5e0!3m2!1sen!2sin!4v1617431739511!5m2!1sen!2sin"
+                                width="100%" height="300"
+                                style="border: 3px solid rgba(0, 0, 0, 0.9);box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.4), 0 14px 30px 0 rgba(0, 0, 0, 0.29);"
+                                allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+
+                        <div id=div2 class="mapcontainer"><iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.2510824449823!2d88.32698421427293!3d22.53226534012989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027750f669c89b%3A0xcbc28975969ccbac!2sWoodlands%20Multispeciality%20Hospital%20Limited!5e0!3m2!1sen!2sin!4v1617436138060!5m2!1sen!2sin"
+                                width="100%" height="300"
+                                style="border: 3px solid rgba(0, 0, 0, 0.9);box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.4), 0 14px 30px 0 rgba(0, 0, 0, 0.29);"
+                                allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+
+                        <div id=div3 class="mapcontainer"><iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.977530727962!2d88.35272131427308!3d22.542514439756836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02771160347adf%3A0xc50100ee3037b6b0!2sBelle%20Vue%20Clinic!5e0!3m2!1sen!2sin!4v1617436454734!5m2!1sen!2sin"
+                                width="100%" height="300"
+                                style="border: 3px solid rgba(0, 0, 0, 0.9);box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.4), 0 14px 30px 0 rgba(0, 0, 0, 0.29);"
+                                allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+
+                        <div id=div4 class="mapcontainer"><iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29486.198996137686!2d88.3501299395508!3d22.512628200000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02712ca643102b%3A0xafedc989326211fb!2sAMRI%20Hospital%20-%20Dhakuria!5e0!3m2!1sen!2sin!4v1617431861430!5m2!1sen!2sin"
+                                width="100%" height="300"
+                                style="border: 3px solid rgba(0, 0, 0, 0.9);box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.4), 0 14px 30px 0 rgba(0, 0, 0, 0.29);"
+                                allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-1 col-md-1" align="center">
+                    </div>
+                    <div class="col-lg-5 col-md-5" style="border: 0px; margin: 0px;" align="center">
+                        <h3 style="color: black">These Hospitals are currently doing Covid Tests: </h3>
+                        <input type="submit" name="changesrc1" class="changesrc1" value="Vidyasagar Hospital" id="1"
+                            onclick="check()" /><br><br>
+                        <input type="submit" name="changesrc2" class="changesrc2"
+                            value="Woodlands Multispeciality Hospital" id="2" onclick="check()" /><br><br>
+                        <input type="submit" name="changesrc3" class="changesrc3" value="Belle Vue Clinic" id="3"
+                            onclick="check()" /><br><br>
+                        <input type="submit" name="changesrc4" class="changesrc4" value="AMRI Superspeciality Hospital"
+                            id="4" onclick="check()" /><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main4">
+
+        <div id="ban2">
+            <div id="ban3" style="border-bottom: 2px solid black;background-color: rgba(0, 0, 0, 0.2);padding: 30px;">
+                <h1 align="center">Vaccination Centres</h1>
+            </div>
+            <div class="row" style="padding-top: 5%;">
+                <div class="container">
+                    <div class="col-lg-12 col-md-12" align="center" style="padding-top: 50px;padding-bottom: 50px;">
+                        <h3 style="padding: 30px;">Press to change your Alert Settings</h3>
+                    </div>
+                    <div class="col-lg-12 col-md-12" align="center" style="padding-bottom: 140px;">
+                        <button>On</button>
+                        <button>Off</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function check1() {
+            if (document.getElementById("1")) {
+                return 1;
+            }
+        }
+        function check2() {
+            if (document.getElementById("2")) {
+                return 2;
+            }
+        }
+        function check3() {
+            if (document.getElementById("3")) {
+                return 3;
+            }
+        }
+        function check4() {
+            if (document.getElementById("4")) {
+                return 4;
+            }
+        }
+    </script>
+    <script>
+        $(function () {
+            $('.changesrc1').click(function () {
+                $('.mapcontainer').hide();
+                var name1 = check1();
+                $('#div' + name1).show();
+            });
+        });
+        $(function () {
+            $('.changesrc2').click(function () {
+                $('.mapcontainer').hide();
+                var name2 = check2();
+                $('#div' + name2).show();
+            });
+        });
+        $(function () {
+            $('.changesrc3').click(function () {
+                $('.mapcontainer').hide();
+                var name3 = check3();
+                $('#div' + name3).show();
+            });
+        });
+        $(function () {
+            $('.changesrc4').click(function () {
+                $('.mapcontainer').hide();
+                var name4 = check4();
+                $('#div' + name4).show();
+            });
+        });
+    </script>
+</body>
+
+</html>
