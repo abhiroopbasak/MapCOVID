@@ -152,7 +152,7 @@ def mail(receiver_email):
 
 
 def pic(request):
-    client=MongoClient("mongodb+srv://admin_project:project@clusterlarkai1.idztf.mongodb.net/covid?retryWrites=true&w=majority")
+    client=MongoClient("mongodb+srv://admin_project:project@clusterlarkai1.idztf.mongodb.net/{{dbname}}?retryWrites=true&w=majority")
     db=client.get_database('covid_tracker')
     records=db.covid
 
@@ -183,7 +183,7 @@ def login(request):
     email=request.GET["email"]
     password=request.GET["password"]
 
-    client=MongoClient("mongodb+srv://admin_project:project@clusterlarkai1.idztf.mongodb.net/covid?retryWrites=true&w=majority")
+    client=MongoClient("mongodb+srv://admin_project:project@clusterlarkai1.idztf.mongodb.net/{{dbname}}?retryWrites=true&w=majority")
     db=client.get_database('covid_tracker')
     records=db.covid
 
@@ -213,7 +213,7 @@ def login(request):
 
 
 def dashboard(request):
-    client=MongoClient("mongodb+srv://admin_project:project@clusterlarkai1.idztf.mongodb.net/covid?retryWrites=true&w=majority")
+    client=MongoClient("mongodb+srv://admin_project:project@clusterlarkai1.idztf.mongodb.net/{{dbname}}?retryWrites=true&w=majority")
     db=client.get_database('covid_tracker')
     records=db.covid
     db=list(records.find())
