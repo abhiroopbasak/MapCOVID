@@ -22,3 +22,4 @@ The above mentioned alert works on the users mail to send automatic messages to 
 
 ![Mail Alert](images/p7.png)
 
+
